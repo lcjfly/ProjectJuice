@@ -14,8 +14,8 @@ public class SerialPortUtil {
     private OutputStream mOutputStream;
     private InputStream mInputStream;
     private ReadThread mReadThread;
-    private String path = "/dev/ttyMT1";
-    private int baudrate = 115200;
+    private String path = "/dev/ttyS1";
+    private int baudrate = 9600;
     private static SerialPortUtil portUtil;
     private OnDataReceiveListener onDataReceiveListener = null;
     private boolean isStop = false;
