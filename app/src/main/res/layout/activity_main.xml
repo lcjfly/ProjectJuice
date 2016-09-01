@@ -10,254 +10,515 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:id="@+id/rootLayout"
     tools:context="com.main.MainActivity">
 
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="20dp"
         android:layout_gravity="center">
         <LinearLayout
             android:orientation="vertical"
-            android:gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
             <Button android:gravity="center"
-                android:id="@+id/sendBtn1"
+                android:id="@+id/valveBtn1"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:background="@drawable/circlebutton"
                 android:text="阀门1" />
-            <EditText android:gravity="center"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/valveSub1"
+                    android:text="-" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:id="@+id/valveTime1"
+                    android:text="20"/>
+                <Button android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/valveAdd1"
+                    android:text="+" />
+            </LinearLayout>
+            <ToggleButton
+                android:id="@+id/valveToggle1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="" />
-            <Button android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="组合选项框" />
+                android:textOn="组合测试开启"
+                android:textOff="组合测试关闭" />
         </LinearLayout>
         <LinearLayout
             android:orientation="vertical"
             android:gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
             <Button android:gravity="center"
-                android:id="@+id/sendBtn2"
+                android:id="@+id/valveBtn2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/circlebutton"
                 android:text="阀门2" />
-            <EditText android:gravity="center"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/valveSub2"
+                    android:text="-" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:id="@+id/valveTime2"
+                    android:text="20"/>
+                <Button android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/valveAdd2"
+                    android:text="+" />
+            </LinearLayout>
+            <ToggleButton
+                android:id="@+id/valveToggle2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="" />
-            <Button android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="组合选项框" />
+                android:textOn="组合测试开启"
+                android:textOff="组合测试关闭" />
         </LinearLayout>
         <LinearLayout
             android:orientation="vertical"
             android:gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
             <Button android:gravity="center"
-                android:id="@+id/sendBtn3"
+                android:id="@+id/valveBtn3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/circlebutton"
                 android:text="阀门3" />
-            <EditText android:gravity="center"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/valveSub3"
+                    android:text="-" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:id="@+id/valveTime3"
+                    android:text="20"/>
+                <Button android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/valveAdd3"
+                    android:text="+" />
+            </LinearLayout>
+            <ToggleButton
+                android:id="@+id/valveToggle3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="" />
-            <Button android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="组合选项框" />
+                android:textOn="组合测试开启"
+                android:textOff="组合测试关闭" />
         </LinearLayout>
         <LinearLayout
             android:orientation="vertical"
             android:gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
             <Button android:gravity="center"
+                android:id="@+id/valveBtn4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/circlebutton"
                 android:text="阀门4" />
-            <EditText android:gravity="center"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/valveSub4"
+                    android:text="-" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:id="@+id/valveTime4"
+                    android:text="20"/>
+                <Button android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/valveAdd4"
+                    android:text="+" />
+            </LinearLayout>
+            <ToggleButton
+                android:id="@+id/valveToggle4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="" />
-            <Button android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="组合选项框" />
+                android:textOn="组合测试开启"
+                android:textOff="组合测试关闭" />
         </LinearLayout>
         <LinearLayout
             android:orientation="vertical"
             android:gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
             <Button android:gravity="center"
+                android:id="@+id/valveBtn5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/circlebutton"
                 android:text="阀门5" />
-            <EditText android:gravity="center"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/valveSub5"
+                    android:text="-" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:id="@+id/valveTime5"
+                    android:text="20"/>
+                <Button android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/valveAdd5"
+                    android:text="+" />
+            </LinearLayout>
+            <ToggleButton
+                android:id="@+id/valveToggle5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="" />
-            <Button android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="组合选项框" />
+                android:textOn="组合测试开启"
+                android:textOff="组合测试关闭" />
         </LinearLayout>
         <LinearLayout
             android:orientation="vertical"
             android:gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
             <Button android:gravity="center"
+                android:id="@+id/valveBtn6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/circlebutton"
                 android:text="阀门6" />
-            <EditText android:gravity="center"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/valveSub6"
+                    android:text="-" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:id="@+id/valveTime6"
+                    android:text="20"/>
+                <Button android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/valveAdd6"
+                    android:text="+" />
+            </LinearLayout>
+            <ToggleButton
+                android:id="@+id/valveToggle6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="" />
-            <Button android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="组合选项框" />
+                android:textOn="组合测试开启"
+                android:textOff="组合测试关闭" />
         </LinearLayout>
     </TableRow>
 
     <TableRow
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content" >
         <LinearLayout
             android:orientation="vertical"
             android:gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
             <Button android:gravity="center"
+                android:id="@+id/valveBtn7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/circlebutton"
                 android:text="阀门7" />
-            <EditText android:gravity="center"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/valveSub7"
+                    android:text="-" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:id="@+id/valveTime7"
+                    android:text="20"/>
+                <Button android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/valveAdd7"
+                    android:text="+" />
+            </LinearLayout>
+            <ToggleButton
+                android:id="@+id/valveToggle7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="" />
-            <Button android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="组合选项框" />
+                android:textOn="组合测试开启"
+                android:textOff="组合测试关闭" />
         </LinearLayout>
         <LinearLayout
             android:orientation="vertical"
             android:gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
             <Button android:gravity="center"
+                android:id="@+id/valveBtn8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/circlebutton"
                 android:text="阀门8" />
-            <EditText android:gravity="center"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/valveSub8"
+                    android:text="-" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:id="@+id/valveTime8"
+                    android:text="20"/>
+                <Button android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/valveAdd8"
+                    android:text="+" />
+            </LinearLayout>
+            <ToggleButton
+                android:id="@+id/valveToggle8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="" />
-            <Button android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="组合选项框" />
+                android:textOn="组合测试开启"
+                android:textOff="组合测试关闭" />
         </LinearLayout>
         <LinearLayout
             android:orientation="vertical"
             android:gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
             <Button android:gravity="center"
+                android:id="@+id/valveBtn9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/circlebutton"
                 android:text="阀门9" />
-            <EditText android:gravity="center"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/valveSub9"
+                    android:text="-" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:id="@+id/valveTime9"
+                    android:text="20"/>
+                <Button android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/valveAdd9"
+                    android:text="+" />
+            </LinearLayout>
+            <ToggleButton
+                android:id="@+id/valveToggle9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="" />
-            <Button android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="组合选项框" />
+                android:textOn="组合测试开启"
+                android:textOff="组合测试关闭" />
         </LinearLayout>
         <LinearLayout
             android:orientation="vertical"
             android:gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
             <Button android:gravity="center"
+                android:id="@+id/valveBtn10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/circlebutton"
                 android:text="阀门10" />
-            <EditText android:gravity="center"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/valveSub10"
+                    android:text="-" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:id="@+id/valveTime10"
+                    android:text="20"/>
+                <Button android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/valveAdd10"
+                    android:text="+" />
+            </LinearLayout>
+            <ToggleButton
+                android:id="@+id/valveToggle10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="" />
-            <Button android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="组合选项框" />
+                android:textOn="组合测试开启"
+                android:textOff="组合测试关闭" />
         </LinearLayout>
         <LinearLayout
             android:orientation="vertical"
             android:gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
             <Button android:gravity="center"
+                android:id="@+id/valveBtn11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/circlebutton"
                 android:text="阀门11" />
-            <EditText android:gravity="center"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/valveSub11"
+                    android:text="-" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:id="@+id/valveTime11"
+                    android:text="20"/>
+                <Button android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/valveAdd11"
+                    android:text="+" />
+            </LinearLayout>
+            <ToggleButton
+                android:id="@+id/valveToggle11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="" />
-            <Button android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="组合选项框" />
+                android:textOn="组合测试开启"
+                android:textOff="组合测试关闭" />
         </LinearLayout>
         <LinearLayout
             android:orientation="vertical"
             android:gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
             <Button android:gravity="center"
+                android:id="@+id/valveBtn12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/circlebutton"
                 android:text="阀门12" />
-            <EditText android:gravity="center"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/valveSub12"
+                    android:text="-" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:id="@+id/valveTime12"
+                    android:text="20"/>
+                <Button android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/valveAdd12"
+                    android:text="+" />
+            </LinearLayout>
+            <ToggleButton
+                android:id="@+id/valveToggle12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="" />
-            <Button android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="组合选项框" />
+                android:textOn="组合测试开启"
+                android:textOff="组合测试关闭" />
         </LinearLayout>
     </TableRow>
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center">
+        android:gravity="center">
         <Button android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
