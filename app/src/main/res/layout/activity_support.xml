@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.main.SupportActivity">
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TableRow android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView android:textSize="35dp" android:text="设备参数" android:layout_gravity="center"/>
+        </TableRow>
+        <TableRow>
+            <Button android:textSize="25dp" android:text="输入电压"/>
+            <TextView android:textSize="25dp" android:text="12V"/>
+        </TableRow>
+        <TableRow>
+            <Button android:textSize="25dp" android:text="额定功率"/>
+            <TextView android:textSize="25dp" android:text="55W"/>
+        </TableRow>
+        <TableRow>
+            <Button android:textSize="25dp" android:text="*加热功率"/>
+            <TextView android:textSize="25dp" android:text="2000W"/>
+        </TableRow>
+        <TableRow>
+            <Button android:textSize="25dp" android:text="热水温度"/>
+            <TextView android:textSize="25dp" android:text="65℃"/>
+        </TableRow>
+        <TableRow>
+            <Button android:textSize="25dp" android:text="碳酸水压力"/>
+            <TextView android:textSize="25dp" android:text="90PSI"/>
+        </TableRow>
+        <TableRow>
+            <Button android:textSize="25dp" android:text="糖浆压力"/>
+            <TextView android:textSize="25dp" android:text="40PSI"/>
+        </TableRow>
+        <TableRow>
+            <Button android:textSize="25dp" android:text="低粘度原浆压力"/>
+            <TextView android:textSize="25dp" android:text="18PSI"/>
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="25dp" android:text="系统升级"/>
+        <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="25dp" android:text="RESET"/>
+    </LinearLayout>
+</LinearLayout>

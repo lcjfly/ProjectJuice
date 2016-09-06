@@ -15,6 +15,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.main.MenuActivity" />
+        <activity android:name="com.main.DeviceInfo" />
+        <activity android:name="com.main.SettingActivity" />
+        <activity android:name="com.main.PayActivity" />
+        <activity android:name="com.main.SaleActivity" />
+        <activity android:name="com.main.MaintainceActivity" />
+        <activity android:name="com.main.CleanActivity" />
+        <activity android:name="com.main.SupportActivity" />
+        <activity android:name="com.main.LogoActivity" />
+        <activity android:name="com.main.FileActivity"></activity>
     </application>
 
 </manifest>
