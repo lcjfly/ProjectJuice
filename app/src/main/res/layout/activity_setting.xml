@@ -27,7 +27,7 @@
                 android:layout_width="wrap_content" />
         </TableRow>
         <TableRow android:layout_width="wrap_content"
-            android:layout_weight="wrap_content">
+            >
             <Button android:text="可乐" android:textSize="20dp"
                 android:layout_width="wrap_content" />
             <Button android:text="2016年10月10日" android:textSize="20dp"
@@ -40,7 +40,7 @@
                 android:layout_width="wrap_content" />
         </TableRow>
         <TableRow android:layout_width="wrap_content"
-            android:layout_weight="wrap_content">
+            >
             <Button android:text="雀巢" android:textSize="20dp"
                 android:layout_width="wrap_content" />
             <Button android:text="2016年10月10日" android:textSize="20dp"
@@ -53,7 +53,7 @@
                 android:layout_width="wrap_content" />
         </TableRow>
         <TableRow android:layout_width="wrap_content"
-            android:layout_weight="wrap_content">
+            >
             <Button android:text="柠檬" android:textSize="20dp"
                 android:layout_width="wrap_content" />
             <Button android:text="2016年10月10日" android:textSize="20dp"
@@ -66,7 +66,7 @@
                 android:layout_width="wrap_content" />
         </TableRow>
         <TableRow android:layout_width="wrap_content"
-            android:layout_weight="wrap_content">
+            >
             <Button android:text="橙子" android:textSize="20dp"
                 android:layout_width="wrap_content" />
             <Button android:text="2016年10月10日" android:textSize="20dp"
@@ -79,7 +79,7 @@
                 android:layout_width="wrap_content" />
         </TableRow>
         <TableRow android:layout_width="wrap_content"
-            android:layout_weight="wrap_content">
+            >
             <Button android:text="苹果" android:textSize="20dp"
                 android:layout_width="wrap_content" />
             <Button android:text="2016年10月10日" android:textSize="20dp"
@@ -92,7 +92,7 @@
                 android:layout_width="wrap_content" />
         </TableRow>
         <TableRow android:layout_width="wrap_content"
-            android:layout_weight="wrap_content">
+            >
             <Button android:text="桃子" android:textSize="20dp"
                 android:layout_width="wrap_content" />
             <Button android:text="2016年10月10日" android:textSize="20dp"
@@ -105,7 +105,7 @@
                 android:layout_width="wrap_content" />
         </TableRow>
         <TableRow android:layout_width="wrap_content"
-            android:layout_weight="wrap_content">
+            >
             <Button android:text="葡萄" android:textSize="20dp"
                 android:layout_width="wrap_content" />
             <Button android:text="2016年10月10日" android:textSize="20dp"
@@ -118,7 +118,7 @@
                 android:layout_width="wrap_content" />
         </TableRow>
         <TableRow android:layout_width="wrap_content"
-            android:layout_weight="wrap_content">
+            >
             <Button android:text="乌梅" android:textSize="20dp"
                 android:layout_width="wrap_content" />
             <Button android:text="2016年10月10日" android:textSize="20dp"
@@ -131,7 +131,7 @@
                 android:layout_width="wrap_content" />
         </TableRow>
         <TableRow android:layout_width="wrap_content"
-            android:layout_weight="wrap_content">
+            >
             <Button android:text="雀巢" android:textSize="20dp"
                 android:layout_width="wrap_content" />
             <Button android:text="2016年10月10日" android:textSize="20dp"

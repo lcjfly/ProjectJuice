@@ -3,6 +3,8 @@ package com.main;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.luchenjie.projectjuice.R;
+
 public class CleanActivity extends AppCompatActivity {
 
     @Override
