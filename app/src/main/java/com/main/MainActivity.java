@@ -1,18 +1,20 @@
 package com.main;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
-import com.dwin.dwinapi.SerialPort;
 import com.example.luchenjie.projectjuice.R;
+import com.serialport.MySerialPort;
 
 public class MainActivity extends AppCompatActivity {
 
-    private SerialPort sp;
+    private MySerialPort sp;
 
     private int[] valveBtnIds = {
             R.id.valveBtn1, R.id.valveBtn2, R.id.valveBtn3, R.id.valveBtn4, R.id.valveBtn5, R.id.valveBtn6,
@@ -45,9 +47,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        try {
+            ActionBar actionBar = getSupportActionBar();
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        } catch (Exception e) {
+
+        }
+
+
         init();
 
-        //sp = new SerialPort("S1", 9600, 8, 1, 'n');
+        //sp = new MySerialPort("S2", 9600, 8, 1, 'n');
+
 
         /*
         valve1 = (Button)findViewById(R.id.valve1);
@@ -70,6 +81,16 @@ public class MainActivity extends AppCompatActivity {
     private void init() {
         for(int i=0;i<valveBtnIds.length;i++) {
             valveBtns[i] = (Button) findViewById(valveBtnIds[i]);
+            valveBtns[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //sp.sendData(new byte[]{(byte) 0xff});
+                    //sp.sendData("07", "HEX");
+
+                    Intent it = new Intent(MainActivity.this, LogoActivity.class);
+                    startActivity(it);
+                }
+            });
         }
 
         for(int i=0;i<valveTimeIds.length;i++) {

@@ -1,5 +1,7 @@
 package com.serialport;
 
+import com.dwin.dwinapi.SerialPort;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -42,9 +44,9 @@ public class SerialPortUtil {
      */
     public void onCreate() {
         try {
-            mSerialPort = new SerialPort(new File(path), baudrate, 0);
-            mOutputStream = mSerialPort.getOutputStream();
-            mInputStream = mSerialPort.getInputStream();
+            //mSerialPort = new SerialPort(new File(path), baudrate, 0);
+            //mOutputStream = mSerialPort.getOutputStream();
+            //mInputStream = mSerialPort.getInputStream();
 
             mReadThread = new ReadThread();
             isStop = false;
@@ -134,7 +136,7 @@ public class SerialPortUtil {
             mReadThread.interrupt();
         }
         if (mSerialPort != null) {
-            mSerialPort.close();
+            //mSerialPort.close();
         }
     }
 
