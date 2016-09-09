@@ -2,60 +2,38 @@ package com.main;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
+import android.support.v4.app.TaskStackBuilder;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
 import com.example.luchenjie.projectjuice.R;
+import com.main.fragments.CleanFragment;
+import com.main.fragments.DebugFragment;
+import com.main.fragments.DeviceInfoFragment;
+import com.main.fragments.LogoFragment;
+import com.main.fragments.MaintainceFragment;
+import com.main.fragments.PayFragment;
+import com.main.fragments.SaleFragment;
+import com.main.fragments.SettingFragment;
+import com.main.fragments.SupportFragment;
+import com.main.fragments.VideoFileFragment;
 import com.serialport.MySerialPort;
 
 public class MainActivity extends AppCompatActivity {
-
-    private MySerialPort sp;
-
-    private int[] valveBtnIds = {
-            R.id.valveBtn1, R.id.valveBtn2, R.id.valveBtn3, R.id.valveBtn4, R.id.valveBtn5, R.id.valveBtn6,
-            R.id.valveBtn7, R.id.valveBtn8, R.id.valveBtn9, R.id.valveBtn10, R.id.valveBtn11, R.id.valveBtn12
-    };
-    private int[] valveTimeIds = {
-            R.id.valveTime1, R.id.valveTime2, R.id.valveTime3, R.id.valveTime4, R.id.valveTime5, R.id.valveTime6,
-            R.id.valveTime7, R.id.valveTime8, R.id.valveTime9, R.id.valveTime10, R.id.valveTime11, R.id.valveTime12
-    };
-    private int[] valveSubIds = {
-            R.id.valveSub1, R.id.valveSub2, R.id.valveSub3, R.id.valveSub4, R.id.valveSub5, R.id.valveSub6,
-            R.id.valveSub7, R.id.valveSub8, R.id.valveSub9, R.id.valveSub10, R.id.valveSub11, R.id.valveSub12
-    };
-    private int[] valveAddIds = {
-            R.id.valveAdd1, R.id.valveAdd2, R.id.valveAdd3, R.id.valveAdd4, R.id.valveAdd5, R.id.valveAdd6,
-            R.id.valveAdd7, R.id.valveAdd8, R.id.valveAdd9, R.id.valveAdd10, R.id.valveAdd11, R.id.valveAdd12
-    };
-    private int[] valveToggleIds = {
-            R.id.valveToggle1, R.id.valveToggle2, R.id.valveToggle3, R.id.valveToggle4, R.id.valveToggle5, R.id.valveToggle6,
-            R.id.valveToggle7, R.id.valveToggle8, R.id.valveToggle9, R.id.valveToggle10, R.id.valveToggle11, R.id.valveToggle12
-    };
-    private Button[] valveBtns = new Button[12];
-    private Button[] valveAdds = new Button[12];
-    private Button[] valveSubs = new Button[12];
-    private TextView[] valveTimes = new TextView[12];
-    private ToggleButton[] valveToggles = new ToggleButton[12];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        try {
-            ActionBar actionBar = getSupportActionBar();
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        } catch (Exception e) {
+        initView();
 
-        }
-
-
-        init();
 
         //sp = new MySerialPort("S2", 9600, 8, 1, 'n');
 
@@ -75,82 +53,73 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        sp.closeSerial();
     }
 
-    private void init() {
-        for(int i=0;i<valveBtnIds.length;i++) {
-            valveBtns[i] = (Button) findViewById(valveBtnIds[i]);
-            valveBtns[i].setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    //sp.sendData(new byte[]{(byte) 0xff});
-                    //sp.sendData("07", "HEX");
+    private void initView() {
+        // 提示getActionBar方法一定在setContentView后面
+        ActionBar actionBar = getSupportActionBar();
+        //actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
-                    Intent it = new Intent(MainActivity.this, LogoActivity.class);
-                    startActivity(it);
+        // 添加Tab选项
+        ActionBar.Tab tab = actionBar.newTab().setText("调试界面")
+                .setTabListener(new TabListener<DebugFragment>(this, "info", DebugFragment.class));
+        actionBar.addTab(tab);
+
+        tab = actionBar.newTab().setText("设备信息")
+                .setTabListener(new TabListener<DeviceInfoFragment>(this, "info", DeviceInfoFragment.class));
+        actionBar.addTab(tab);
+
+        tab = actionBar.newTab().setText("销售数据")
+                .setTabListener(new TabListener<SaleFragment>(this, "info", SaleFragment.class));
+        actionBar.addTab(tab);
+
+        tab = actionBar.newTab().setText("保养")
+                .setTabListener(new TabListener<CleanFragment>(this, "info", CleanFragment.class));
+        actionBar.addTab(tab);
+
+        tab = actionBar.newTab().setText("视频文件")
+                .setTabListener(new TabListener<VideoFileFragment>(this, "info", VideoFileFragment.class));
+        actionBar.addTab(tab);
+
+        tab = actionBar.newTab().setText("Logo")
+                .setTabListener(new TabListener<LogoFragment>(this, "info", LogoFragment.class));
+        actionBar.addTab(tab);
+
+        tab = actionBar.newTab().setText("维护")
+                .setTabListener(new TabListener<MaintainceFragment>(this, "info", MaintainceFragment.class));
+        actionBar.addTab(tab);
+
+        tab = actionBar.newTab().setText("支付")
+                .setTabListener(new TabListener<PayFragment>(this, "info", PayFragment.class));
+        actionBar.addTab(tab);
+
+        tab = actionBar.newTab().setText("设置")
+                .setTabListener(new TabListener<SettingFragment>(this, "info", SettingFragment.class));
+        actionBar.addTab(tab);
+
+        tab = actionBar.newTab().setText("系统")
+                .setTabListener(new TabListener<SupportFragment>(this, "info", SupportFragment.class));
+        actionBar.addTab(tab);
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                Intent upIntent = NavUtils.getParentActivityIntent(this);
+                if (NavUtils.shouldUpRecreateTask(this, upIntent)) {
+                    TaskStackBuilder.create(this)
+                            .addNextIntentWithParentStack(upIntent)
+                            .startActivities();
+                } else {
+                    upIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    NavUtils.navigateUpTo(this, upIntent);
                 }
-            });
-        }
-
-        for(int i=0;i<valveTimeIds.length;i++) {
-            valveTimes[i] = (TextView) findViewById(valveTimeIds[i]);
-        }
-
-        for(int i=0;i<valveSubIds.length;i++) {
-            valveSubs[i] = (Button) findViewById(valveSubIds[i]);
-            valveSubs[i].setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int viewId = v.getId();
-                    int index = getIndexById(viewId);
-                    if(index != -1) {
-                        int val = Integer.parseInt(valveTimes[index].getText().toString());
-                        if(val > 1) {
-                            valveTimes[index].setText(String.valueOf(val - 1));
-                        }
-                    }
-                }
-
-                private int getIndexById(int subBtnId) {
-                    for(int i=0;i<valveSubIds.length;i++) {
-                        if(valveSubIds[i] == subBtnId) {
-                            return i;
-                        }
-                    }
-                    return -1;
-                }
-            });
-        }
-
-        for(int i=0;i<valveAddIds.length;i++) {
-            valveAdds[i] = (Button) findViewById(valveAddIds[i]);
-            valveAdds[i].setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int viewId = v.getId();
-                    int index = getIndexById(viewId);
-                    if(index != -1) {
-                        int val = Integer.parseInt(valveTimes[index].getText().toString());
-                        if(val < 20) {
-                            valveTimes[index].setText(String.valueOf(val + 1));
-                        }
-                    }
-                }
-
-                private int getIndexById(int addBtnId) {
-                    for(int i=0;i<valveAddIds.length;i++) {
-                        if(valveAddIds[i] == addBtnId) {
-                            return i;
-                        }
-                    }
-                    return -1;
-                }
-            });
-        }
-
-        for(int i=0;i<valveToggleIds.length;i++) {
-            valveToggles[i] = (ToggleButton) findViewById(valveToggleIds[i]);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 
