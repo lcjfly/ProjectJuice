@@ -1,16 +1,13 @@
 package com.main;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v4.app.TaskStackBuilder;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.ToggleButton;
 
 import com.example.luchenjie.projectjuice.R;
 import com.main.fragments.CleanFragment;
@@ -20,12 +17,13 @@ import com.main.fragments.LogoFragment;
 import com.main.fragments.MaintainceFragment;
 import com.main.fragments.PayFragment;
 import com.main.fragments.SaleFragment;
+import com.main.fragments.SerialTestFragment;
 import com.main.fragments.SettingFragment;
 import com.main.fragments.SupportFragment;
 import com.main.fragments.VideoFileFragment;
 import com.serialport.MySerialPort;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements SerialTestFragment.OnFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +49,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
     }
@@ -64,6 +67,10 @@ public class MainActivity extends AppCompatActivity {
         // 添加Tab选项
         ActionBar.Tab tab = actionBar.newTab().setText("调试界面")
                 .setTabListener(new TabListener<DebugFragment>(this, "info", DebugFragment.class));
+        actionBar.addTab(tab);
+
+        tab = actionBar.newTab().setText("串口测试")
+                .setTabListener(new TabListener<SerialTestFragment>(this, "info", SerialTestFragment.class));
         actionBar.addTab(tab);
 
         tab = actionBar.newTab().setText("设备信息")
@@ -101,6 +108,8 @@ public class MainActivity extends AppCompatActivity {
         tab = actionBar.newTab().setText("系统")
                 .setTabListener(new TabListener<SupportFragment>(this, "info", SupportFragment.class));
         actionBar.addTab(tab);
+
+
 
     }
 
