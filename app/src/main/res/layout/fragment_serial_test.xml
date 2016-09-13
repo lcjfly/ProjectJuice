@@ -1,184 +1,196 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.main.fragments.SerialTestFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="接收记录"
-            android:layout_gravity="center"/>
+        android:orientation="horizontal"
+        android:layout_weight="3">
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center">
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="接收记录"
+                android:layout_gravity="center"
+                android:layout_weight="1"/>
             <ScrollView
-                android:layout_width="500dp"
+                android:layout_width="fill_parent"
                 android:layout_height="100dp"
-                android:id="@+id/sendLogs">
+                android:id="@+id/sendLogs"
+                android:layout_weight="15">
                 <TextView
                     android:id="@+id/sendLogsText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="10:01:10 201010101010101010\n10:01:10 101010101010101010\n10:01:10 201010101010101010\n10:01:10 101010101010101010\n10:01:10 101010101010101010\n10:01:10 101010101010101010\n10:01:10 101010101010101010\n10:01:10 101010101010101010\n10:01:10 101010101010101010\n33:33:33 101010101010101010"
+                    android:text="11\n11\n11\n11\n11\n11\n11\n11\n11\n11\n11\n11\n11\n11\n11\n1111\n11\n11\n11\n11\n11\n11\n11\n11\n11\n11\n11\n11\n11\n11\n11"
                     android:textSize="20dp"/>
             </ScrollView>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="清空"
-                android:textSize="50dp"/>
+                android:textSize="30dp"
+                android:layout_weight="1"/>
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="发送记录"
-            android:layout_gravity="center"/>
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center">
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="发送记录"
+                android:layout_gravity="center"
+                android:layout_weight="1"/>
             <ScrollView
-                android:layout_width="500dp"
+                android:layout_width="fill_parent"
                 android:layout_height="100dp"
-                android:id="@+id/receiveLogs">
+                android:id="@+id/receiveLogs"
+                android:layout_weight="15">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="10:01:10 201010101010101010\n10:01:10 101010101010101010\n10:01:10 201010101010101010\n10:01:10 101010101010101010\n10:01:10 101010101010101010\n10:01:10 101010101010101010\n10:01:10 101010101010101010\n10:01:10 101010101010101010\n10:01:10 101010101010101010\n33:33:33 101010101010101010"
-                    android:textSize="20dp"/>
+                    android:text="11\n11\n11\n11\n11\n11\n11\n11\n11\n11\n11\n11\n11\n11\n11\n1111\n11\n11\n11\n11\n11\n11\n11\n11\n11\n11\n11\n11\n11\n11\n11"
+                    android:textSize="20dp" />
             </ScrollView>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="清空"
-                android:textSize="50dp"/>
+                android:textSize="30dp"
+                android:layout_weight="1"/>
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center">
-            <LinearLayout
-                android:layout_width="500dp"
-                android:layout_height="wrap_content"
-                >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1"
-                    android:textSize="50dp"
-                    android:id="@+id/byte16"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="50dp"
-                    android:id="@+id/byte15"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1"
-                    android:textSize="50dp"
-                    android:id="@+id/byte14"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="50dp"
-                    android:id="@+id/byte13"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1"
-                    android:textSize="50dp"
-                    android:id="@+id/byte12"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="50dp"
-                    android:id="@+id/byte11"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1"
-                    android:textSize="50dp"
-                    android:id="@+id/byte10"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="50dp"
-                    android:id="@+id/byte9"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1"
-                    android:textSize="50dp"
-                    android:id="@+id/byte8"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="50dp"
-                    android:id="@+id/byte7"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1"
-                    android:textSize="50dp"
-                    android:id="@+id/byte6"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="50dp"
-                    android:id="@+id/byte5"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1"
-                    android:textSize="50dp"
-                    android:id="@+id/byte4"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="50dp"
-                    android:id="@+id/byte3"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1"
-                    android:textSize="50dp"
-                    android:id="@+id/byte2"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="50dp"
-                    android:id="@+id/byte1"/>
-            </LinearLayout>
+    </LinearLayout>
 
-            <Button
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            >
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="发送"
+                android:text="1"
                 android:textSize="50dp"
-                android:id="@+id/sendBtn"/>
+                android:id="@+id/byte16"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="50dp"
+                android:id="@+id/byte15"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textSize="50dp"
+                android:id="@+id/byte14"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="50dp"
+                android:id="@+id/byte13"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textSize="50dp"
+                android:id="@+id/byte12"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="50dp"
+                android:id="@+id/byte11"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textSize="50dp"
+                android:id="@+id/byte10"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="50dp"
+                android:id="@+id/byte9"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textSize="50dp"
+                android:id="@+id/byte8"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="50dp"
+                android:id="@+id/byte7"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textSize="50dp"
+                android:id="@+id/byte6"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="50dp"
+                android:id="@+id/byte5"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textSize="50dp"
+                android:id="@+id/byte4"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="50dp"
+                android:id="@+id/byte3"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textSize="50dp"
+                android:id="@+id/byte2"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="50dp"
+                android:id="@+id/byte1"/>
         </LinearLayout>
-        <TextView
+
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="当前值表示:读取3号阀状态"
-            android:layout_gravity="center"
-            android:textSize="30dp"/>
+            android:text="发送"
+            android:textSize="30dp"
+            android:id="@+id/sendBtn"/>
     </LinearLayout>
-</FrameLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="当前值表示:读取3号阀状态"
+        android:layout_gravity="center"
+        android:textSize="30dp"/>
+</LinearLayout>
