@@ -9,23 +9,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat">
         <activity android:name="com.main.MainActivity">
+
+        </activity>
+        <activity android:name="com.main.activities.SellActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.main.MenuActivity"></activity>
-        <activity android:name="com.main.DeviceInfo"></activity>
-        <activity android:name="com.main.SettingActivity" />
-        <activity android:name="com.main.PayActivity" />
-        <activity android:name="com.main.SaleActivity" />
-        <activity android:name="com.main.MaintainceActivity" />
-        <activity android:name="com.main.CleanActivity" />
-        <activity android:name="com.main.SupportActivity" />
-        <activity android:name="com.main.LogoActivity" />
-        <activity android:name="com.main.FileActivity" />
-        <activity android:name="com.main.DebugActivity"></activity>
+
+        <service
+            android:name="com.main.services.DownloadService"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>

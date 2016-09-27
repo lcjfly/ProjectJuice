@@ -1,5 +1,6 @@
 package com.main.fragments;
 
+import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
@@ -16,6 +17,8 @@ import android.widget.TextView;
 
 import com.example.luchenjie.projectjuice.R;
 import com.main.BinaryTextViewOnClickListener;
+import com.main.FragmentCallback;
+import com.main.MainActivity;
 
 import org.w3c.dom.Text;
 
@@ -39,6 +42,15 @@ public class SerialTestFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private FragmentCallback fragmentCallback;
+
+    private int[] bytesIds = {
+            R.id.byte1, R.id.byte2, R.id.byte3, R.id.byte4,
+            R.id.byte5, R.id.byte6, R.id.byte7, R.id.byte8,
+            R.id.byte9, R.id.byte10, R.id.byte11, R.id.byte12,
+            R.id.byte13, R.id.byte14, R.id.byte15, R.id.byte16,
+    };
 
     private OnFragmentInteractionListener mListener;
 
@@ -87,17 +99,35 @@ public class SerialTestFragment extends Fragment {
         sendBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                fragmentCallback.sendSerialByte(null);
                 TextView sendLogsText = (TextView) getView().findViewById(R.id.sendLogsText);
                 sendLogsText.append(getTime()+"-201010101010101010\n");
                 scrollToBottom();
             }
         });
 
-        final TextView byte16 = (TextView) getView().findViewById(R.id.byte16);
-        byte16.setOnClickListener(new BinaryTextViewOnClickListener());
+        for(int i=0;i<bytesIds.length;i++) {
+            TextView byteTextView = (TextView) getView().findViewById(bytesIds[i]);
+            byteTextView.setOnClickListener(new BinaryTextViewOnClickListener());
+        }
 
-        final TextView byte15 = (TextView) getView().findViewById(R.id.byte15);
-        byte15.setOnClickListener(new BinaryTextViewOnClickListener());
+        Button clearReceivedLogsBtn = (Button) getView().findViewById(R.id.clearReceivedLogsBtn);
+        clearReceivedLogsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView receivedLogsText = (TextView) getView().findViewById(R.id.receivedLogsText);
+                receivedLogsText.setText("");
+            }
+        });
+
+        Button clearSendLogsBtn = (Button) getView().findViewById(R.id.clearSendLogsBtn);
+        clearSendLogsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView sendLogsText = (TextView) getView().findViewById(R.id.sendLogsText);
+                sendLogsText.setText("");
+            }
+        });
     }
 
     public void scrollToBottom() {
@@ -107,7 +137,7 @@ public class SerialTestFragment extends Fragment {
             public void run() {
                 ScrollView sendLogsSV = (ScrollView) getView().findViewById(R.id.sendLogs);
                 sendLogsSV.fullScroll(ScrollView.FOCUS_DOWN);
-                ScrollView receiveLogsSV = (ScrollView) getView().findViewById(R.id.receiveLogs);
+                ScrollView receiveLogsSV = (ScrollView) getView().findViewById(R.id.receivedLogs);
                 receiveLogsSV.fullScroll(ScrollView.FOCUS_DOWN);
             }
         });
@@ -134,6 +164,11 @@ public class SerialTestFragment extends Fragment {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
         }
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        this.fragmentCallback = (MainActivity) activity;
     }
 
     @Override

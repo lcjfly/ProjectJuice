@@ -7,6 +7,15 @@ public class Test {
 
     public static void main(String[] args) {
         byte b = (byte) 0xff;
+        System.out.print(bit2byte("00010011"));
+    }
+
+    public static byte bit2byte(String bString){
+        byte result=0;
+        for(int i=bString.length()-1,j=0;i>=0;i--,j++){
+            result+=(Byte.parseByte(bString.charAt(i)+"")*Math.pow(2, j));
+        }
+        return result;
     }
 
     public static void printHexString( byte[] b) {
