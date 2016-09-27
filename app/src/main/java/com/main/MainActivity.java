@@ -21,12 +21,11 @@ import com.main.fragments.SerialTestFragment;
 import com.main.fragments.SettingFragment;
 import com.main.fragments.SupportFragment;
 import com.main.fragments.VideoFileFragment;
-import com.serialport.MySerialPort;
 import com.util.ByteUtil;
 
-public class MainActivity extends AppCompatActivity implements SerialTestFragment.OnFragmentInteractionListener, FragmentCallback {
+public class MainActivity extends AppCompatActivity implements FragmentCallback {
 
-    private MySerialPort sp = new MySerialPort("S2", 9600, 8, 1, 'n');
+    //private MySerialPort sp = new MySerialPort("S2", 9600, 8, 1, 'n');
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,11 +47,6 @@ public class MainActivity extends AppCompatActivity implements SerialTestFragmen
     }
 
     @Override
-    public void onFragmentInteraction(Uri uri) {
-
-    }
-
-    @Override
     protected void onDestroy() {
         super.onDestroy();
     }
@@ -62,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements SerialTestFragmen
         if(bytes == null) {
             bytes = new byte[]{ByteUtil.bit2byte("00001111"), ByteUtil.bit2byte("10101010")};
         }
-        this.sp.sendData(bytes);
+        //this.sp.sendData(bytes);
     }
 
     private void initView() {
